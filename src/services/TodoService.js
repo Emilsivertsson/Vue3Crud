@@ -27,6 +27,14 @@ class TodoService {
             });;
     }
 
+    updateTodoById(id, todo) {
+        return axios.put(`${API_URL}/${id}`, todo)
+            .catch((error) => {
+                console.log(error);
+                throw error;
+            });;
+    }
+
     markTodoComplete(id) {
         return axios.put(`${API_URL}/complete/${id}`)
             .catch((error) => {

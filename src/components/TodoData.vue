@@ -21,7 +21,7 @@
           <td>
             <button type="button" class="btn btn-primary" @click.prevent="viewDescription(todo)">View Description</button>
             <button type="button" class="btn btn-danger" @click.prevent="deleteTodo(todo.id)">Delete Todo</button>
-            <button type="button" class="btn btn-info" @click.prevent="editTodo(todo.id)">Edit Todo</button>
+            <button type="button" class="btn btn-info" @click.prevent="editTodo(todo.id, todo)">Edit Todo</button>
             <button type="button" class="btn btn-info" @click.prevent="markTodoComplete(todo.id)">Mark Complete</button>
           </td>
         </tr>
@@ -65,9 +65,16 @@ export default {
         this.getTodos();
       });
     },
-    editTodo() {
+    editTodo(id,todo) {
       console.log("Edit button clicked");
-      //open edit modal
+      TodoService.updateTodoById(id, {
+        title: todo.title,
+        description: todo.description,
+        completed: todo.completed,
+      }).then((response) => {
+        console.log(response.data);
+        this.getTodos();
+      });
     },
     markTodoComplete(id) {
       console.log("Mark complete button clicked");
