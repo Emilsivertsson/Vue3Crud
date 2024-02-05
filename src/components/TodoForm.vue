@@ -3,11 +3,11 @@
     <form>
       <div class="form-group" >
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" v-model="todoTitle" required>
+        <input type="text" class="form-control form-control-lg" id="title" v-model="todoTitle" required>
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" rows="3" v-model="todoDescription"></textarea>
+        <textarea class="form-control form-control-lg" rows="7" v-model="todoDescription"></textarea>
       </div>
       <br>
       <button type="submit" class="btn btn-primary" @click.prevent="addTodo">Add Todo</button>
