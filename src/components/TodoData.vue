@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <div class="header">
-      <h1 class="text-center">Todos</h1>
-    </div>
     <div class="table-container">
       <table class="table table-striped">
         <thead>
@@ -24,14 +21,13 @@
             <button type="button" class="btn btn-primary" @click.prevent="viewDescription(todo)">View Description</button>
             <button type="button" class="btn btn-danger" @click.prevent="deleteTodo(todo.id)">Delete Todo</button>
             <button type="button" class="btn btn-info" @click.prevent="editTodo(todo.id)">Edit Todo</button>
-            <button type="button" class="btn btn-info" @click.prevent="markTodoComplete(todo)">Mark Complete</button>
+            <button type="button" class="btn btn-info" @click.prevent="markTodoComplete(todo.id)">Mark Complete</button>
           </td>
         </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Modal for TODO description -->
     <div id="descriptionModal" class="modal" ref="descriptionModal">
       <div class="modal-content">
         <span class="close" @click="closeDescriptionModal">&times;</span>
@@ -71,18 +67,10 @@ export default {
       console.log("Edit button clicked");
       //open edit modal
     },
-    markTodoComplete(todo) {
+    markTodoComplete(id) {
       console.log("Mark complete button clicked");
-      console.log(todo);
-      const updatedTodo = {
-        id: todo.id,
-        title: todo.title,
-        description: todo.description,
-        complete: !todo.complete,
-      };
-      console.log(updatedTodo);
 
-      TodoService.markTodoComplete(updatedTodo).then((response) => {
+      TodoService.markTodoComplete(id).then((response) => {
         console.log(response.data);
         this.getTodos();
       });
@@ -122,7 +110,7 @@ export default {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
 }
 
 /* The Close Button */
@@ -138,5 +126,9 @@ export default {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+button {
+  margin: 2px;
 }
 </style>

@@ -27,8 +27,8 @@ class TodoService {
             });;
     }
 
-    markTodoComplete(todo) {
-        return axios.put(`${API_URL}/${todo.id}`, todo)
+    markTodoComplete(id) {
+        return axios.put(`${API_URL}/complete/${id}`)
             .catch((error) => {
                 console.log(error);
                 throw error;
@@ -42,6 +42,7 @@ class TodoService {
                 throw error;
             });;
     }
+
 }
 
 export default new TodoService();
