@@ -21,7 +21,7 @@
           <td>
             <button type="button" class="btn btn-primary" @click.prevent="viewDescription(todo)">View Description</button>
             <button type="button" class="btn btn-danger" @click.prevent="deleteTodo(todo.id)">Delete Todo</button>
-            <button type="button" class="btn btn-info" @click.prevent="editTodo(todo.id, todo)">Edit Todo</button>
+            <button type="button" class="btn btn-info" @click.prevent="editTodo(todo)">Edit Todo</button>
             <button type="button" class="btn btn-info" @click.prevent="markTodoComplete(todo.id)">Mark Complete</button>
           </td>
         </tr>
@@ -36,6 +36,18 @@
       </div>
     </div>
   </div>
+  <div id="editModal" class="modal" ref="editModal">
+    <div class="modal-content">
+      <span class="close" @click="closeModal">&times;</span>
+      <label for="editTitle">Title:</label>
+      <input type="text" id="editTitle" v-model="editedTodo.title">
+
+      <label for="editDescription">Description:</label>
+      <textarea id="editDescription" v-model="editedTodo.description"></textarea>
+
+      <button @click="saveChanges">Save Changes</button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -48,6 +60,7 @@ export default {
       todos: [],
       descriptionModalVisible: false,
       currentDescription: "",
+      editedTodo: {},
     };
   },
   methods: {
@@ -65,16 +78,10 @@ export default {
         this.getTodos();
       });
     },
-    editTodo(id,todo) {
+    editTodo(todo) {
       console.log("Edit button clicked");
-      TodoService.updateTodoById(id, {
-        title: todo.title,
-        description: todo.description,
-        completed: todo.completed,
-      }).then((response) => {
-        console.log(response.data);
-        this.getTodos();
-      });
+      this.editedTodo = { ...todo }; // Assuming you have a data property named editedTodo
+      this.$refs.editModal.style.display = "block";
     },
     markTodoComplete(id) {
       console.log("Mark complete button clicked");
@@ -90,6 +97,22 @@ export default {
     },
     closeDescriptionModal() {
       this.$refs.descriptionModal.style.display = "none";
+    },
+    saveChanges() {
+      console.log("Save Changes button clicked");
+      TodoService.updateTodoById(this.editedTodo.id, {
+        title: this.editedTodo.title,
+        description: this.editedTodo.description,
+        completed: this.editedTodo.completed,
+      }).then((response) => {
+        console.log(response.data);
+        this.closeModal();
+        this.getTodos();
+      });
+    },
+
+    closeModal() {
+      this.$refs.editModal.style.display = "none";
     },
   },
   created() {
