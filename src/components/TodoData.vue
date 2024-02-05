@@ -13,8 +13,9 @@
         <tr v-for="todo in todos" :key="todo.id">
           <td>{{ todo.title }}</td>
           <td>{{ todo.description }}</td>
+
           <td>
-            <span v-if="todo.complete" class="text-success">&#10004; Completed</span>
+            <span v-if="todo.completed" class="text-success">&#10004; Completed</span>
             <span v-else class="text-warning">&#10060; Incomplete</span>
           </td>
           <td>
@@ -54,6 +55,7 @@ export default {
       console.log("Get todos button clicked");
       TodoService.getAllTodos().then((response) => {
         this.todos = response.data;
+        console.log(response.data);
       });
     },
     deleteTodo(id) {
@@ -69,7 +71,6 @@ export default {
     },
     markTodoComplete(id) {
       console.log("Mark complete button clicked");
-
       TodoService.markTodoComplete(id).then((response) => {
         console.log(response.data);
         this.getTodos();
