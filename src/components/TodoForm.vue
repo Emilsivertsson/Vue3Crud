@@ -48,3 +48,12 @@ export default {
 };
 </script>
 
+<style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+</style>
