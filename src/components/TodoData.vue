@@ -22,7 +22,7 @@
             <button type="button" class="btn btn-primary" @click.prevent="viewDescription(todo)">View Description</button>
             <button type="button" class="btn btn-danger" @click.prevent="deleteTodo(todo.id)">Delete Todo</button>
             <button type="button" class="btn btn-info" @click.prevent="editTodo(todo)">Edit Todo</button>
-            <button type="button" class="btn btn-success" @click.prevent="markTodoComplete(todo.id)">Mark Complete</button>
+            <button type="button" class="btn btn-success" @click.prevent="markTodoComplete(todo.id)">Complete/Incomplete</button>
           </td>
         </tr>
         </tbody>
