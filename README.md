@@ -1,14 +1,36 @@
-# testvue-createvue
+# Todo app
 
-This template should help get you started developing with Vue 3 in Vite.
+Project name
+Description
+Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-## Recommended IDE Setup
+What was your motivation?
+Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+What problem does it solve?
+What did you learn?
+Table of Contents (Optional)
+If your README is long, add a table of contents to make it easy for users to find what they need.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Installation
+Usage
+Credits
+License
+Installation
+What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
-## Customize configuration
+Usage
+Provide instructions and examples for use. Include screenshots as needed.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+
+```md
+![alt text](assets/images/screenshot.png)
+```
+Features
+If your project has a lot of features, list them here.
+
+
+
 
 ## Project Setup
 
