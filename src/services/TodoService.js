@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/todos";
+const API_URL = "http://spring17-env.eba-hp22cqpp.eu-north-1.elasticbeanstalk.com/todos";
 
 class TodoService {
     getAllTodos() {
