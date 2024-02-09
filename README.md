@@ -24,13 +24,14 @@ On the left side of the app you can add a new task by typing in the input fields
 On the right side you can see all the tasks that you have added.\
 You can delete a task by clicking the delete button, edit a task by clicking the edit button and toggle the status of a task by clicking the complete/incomplete button.
 
-Include screenshots as needed.
 
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+<p align="center">
+  <img src="screenshots/index.jpg" alt="index" >
+<img src="screenshots/description.jpg" alt="description">
+<img src="screenshots/edit.jpg" alt="edit">
+<img src="screenshots/complete.jpg" alt="complete"></p>
 
-```md
-![alt text](assets/images/screenshot.png)
-```
+
 ### Features
 - Add a Todo
 - Delete a Todo
