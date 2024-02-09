@@ -11,7 +11,7 @@ class TodoService {
                 throw error;
             });
     }
-
+    // this method is not used, but saved for future use
     getOneTodo(id) {
         return axios.get(`${API_URL}/${id}`)
             .catch((error) => {
