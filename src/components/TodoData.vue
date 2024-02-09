@@ -1,3 +1,7 @@
+<!--this class is responsible for displaying the data of the todos, also it has the methods to delete, edit,
+ mark as complete and view the description of the todos -->
+
+
 <template>
   <div class="container">
     <div class="table-container">
@@ -80,7 +84,7 @@ export default {
     },
     editTodo(todo) {
       console.log("Edit button clicked");
-      this.editedTodo = { ...todo }; // Assuming you have a data property named editedTodo
+      this.editedTodo = { ...todo };
       this.$refs.editModal.style.display = "block";
     },
     markTodoComplete(id) {

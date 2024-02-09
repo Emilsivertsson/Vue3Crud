@@ -1,3 +1,5 @@
+//this is the main component of the application that holds the TodoForm and TodoData components
+
 <template>
   <div class="header">
     <h1 class="text-center">Todos</h1>

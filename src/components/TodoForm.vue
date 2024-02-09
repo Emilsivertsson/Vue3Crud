@@ -1,3 +1,6 @@
+<!-- This component is used to add a new item to the list. It has a form with two input fields for the title and description of the item. When the form is submitted, the addTodo method is called, which sends a POST request to the server to add the new item to the database.
+ After the item is added, the page is reloaded to display the updated list of todos. -->
+
 <template>
   <div class="container">
     <form>
@@ -7,7 +10,8 @@
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control form-control-lg" rows="7" v-model="todoDescription"></textarea>
+
+        <textarea class="form-control form-control-lg" rows="7" v-model="todoDescription" required></textarea>
       </div>
       <br>
       <button type="submit" class="btn btn-primary" @click.prevent="addTodo">Add Todo</button>
@@ -17,6 +21,7 @@
 
 </template>
 
+// this holds the methods for adding a new todo to the list and clearing the form after the todo is added.
 <script>
 import TodoService from "@/services/TodoService.js";
 

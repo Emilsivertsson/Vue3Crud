@@ -1,4 +1,4 @@
-
+// Main entry point for the application.
 import 'bootstrap/dist/css/bootstrap.css'
 
 import { createApp } from 'vue'
