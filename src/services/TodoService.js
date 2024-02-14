@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://spring17-env.eba-hp22cqpp.eu-north-1.elasticbeanstalk.com/todos";
+const API_URL = "https://spring17-env.eba-hp22cqpp.eu-north-1.elasticbeanstalk.com/todos";
 
 // this service is used to make API calls to the backend
 class TodoService {
