@@ -1,7 +1,7 @@
 import axios from "axios";
 // https://corsproxy.io/?<url> add this to the API_URL if you want to use a proxy to avoid CORS issues
 
-const API_URL = "http://spring17-env.eba-hp22cqpp.eu-north-1.elasticbeanstalk.com/todos";
+const API_URL = "Api-URL";
 
 // this service is used to make API calls to the backend
 class TodoService {
